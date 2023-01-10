@@ -21,9 +21,9 @@ npm run dev
 
 - Create New Page. (Done)
 - Create API Route that returns a message, can be anything.  (Done)
-- Request message in the new page, and display it any way possible. 
+- Request message in the new page, and display it any way possible. (Done)
 - Create a post API route that consumes the message, and returns the message backwards. (Done)
-- Create a button that transforms the message using the post route.  
+- Create a button that transforms the message using the post route. (Done)
 
 
 ## Create Pull Request
