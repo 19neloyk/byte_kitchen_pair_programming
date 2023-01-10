@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 import React, { useState, useEffect } from 'react'
 
 function MessagePage (){
@@ -10,7 +10,6 @@ function MessagePage (){
         const doit = async () => {
             let message = await getRegularMessage();
             setRegularMessage(message);
-            console.log("HI")
         };
         doit();
     },
@@ -57,13 +56,13 @@ function MessagePage (){
 };
 
 async function getRegularMessage() {
-    let response = await fetch('http://localhost:3000/api/message', {method: 'GET'});
+    let response = await fetch('/api/message', {method: 'GET'});
     let json = await response.json(); // Because response.json is a promise as well
     return json.message
 }
 
 async function getReversedMessage(input) {
-    let response = await fetch('http://localhost:3000/api/message?input=' + input, {method: 'POST'})
+    let response = await fetch('/api/message?input=' + input, {method: 'POST'})
     let json = await response.json(); // Because response.json is a promise as well
     return json.message
 }
