@@ -19,7 +19,7 @@ function MessagePage (){
     
     // This deals with user's text input and then the reversing
     // of this input
-    const [messageToReverse, setMessageToReverse] = useState("hi");
+    const [messageToReverse, setMessageToReverse] = useState("");
     const [reversedMessage, setReversedMessage] = useState("");
 
     return (
