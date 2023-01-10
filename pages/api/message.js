@@ -1,20 +1,15 @@
 export default function handler(req, res) {
     if (req.method === 'GET') {
-        // GET request
+        // GET request: Case where we request an arbitrary message
+        // Accepted param(s): None
+        res.status(200).json({ message: "This is an arbitrary message" });
 
-        // This is the message we will respond with
-        let message;
-
-        // Case where we have no input message; send back a default message
-        if (req.query.inputmessage === undefined) {
-            message = "This is an arbitrary message";
-
-        // Case where we do have an input message; send back the reversed version
-        } else {
-            inputmessage = req.query.inputmessage;
-            message = inputmessage.split("").reverse().join("");
-        }
-
+    } else if (req.method === 'POST') {
+        // POST request: Case where we request a reversed message
+        // Accepted param(s): "input"
+        let input = req.query.input;
+        let message = input.split("").reverse().join("");
+        
         // Send back the message
         res.status(200).json({ message: message });
 
