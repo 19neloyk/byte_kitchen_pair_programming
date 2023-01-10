@@ -13,8 +13,9 @@ export default function handler(req, res) {
         // Send back the message
         res.status(200).json({ message: message });
 
+    } else {
+        // In case of unsupported methods
+        res.status(405).json({ message: "Method not allowed" });
     }
 
-    // In case of unsupported methods
-    res.status(405).json({ message: "Method not allowed" }
-}
+};
